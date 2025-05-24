@@ -205,8 +205,7 @@ JOIN salesman s ON c.salesman_id = s.salesman_id;
 
 
 **Question 9**
----
--- Paste Question 9 here
+
 
 ```sql
 SELECT n.*
