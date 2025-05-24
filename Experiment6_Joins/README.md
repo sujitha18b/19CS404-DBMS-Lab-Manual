@@ -53,107 +53,167 @@ ON table1.column = table2.column;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+
+![image](https://github.com/user-attachments/assets/788d4766-dda6-490c-9b87-86739fcb80e2)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+SELECT patients.first_name, surgeries.*
+FROM patients
+INNER JOIN surgeries
+ON patients.patient_id = surgeries.patient_id
+WHERE patients.date_of_birth > '1990-01-01';
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/2f62b468-ccfe-409e-8d76-5b426354efe6)
+
 
 **Question 2**
----
--- Paste Question 2 here
+
+![image](https://github.com/user-attachments/assets/a34011ab-b22d-4a13-9964-2368cdc92368)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT orders.ord_no, 
+       orders.purch_amt, 
+       orders.ord_date, 
+       customer.cust_name, 
+       customer.city AS customer_city, 
+       customer.grade, 
+       salesman.name AS salesman_name, 
+       salesman.city AS salesman_city, 
+       salesman.commission
+FROM orders
+INNER JOIN customer ON orders.customer_id = customer.customer_id
+INNER JOIN salesman ON orders.salesman_id = salesman.salesman_id;
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/64d50c27-403b-4b25-b3be-53564b4db47c)
+
 
 **Question 3**
----
--- Paste Question 3 here
+
+![image](https://github.com/user-attachments/assets/4ea22625-f478-46d5-84fa-872f12aa8f8a)
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT customer.cust_name, 
+       customer.city AS city, 
+       customer.grade, 
+       salesman.name AS Salesman, 
+       salesman.city AS city
+FROM customer
+INNER JOIN salesman ON customer.salesman_id = salesman.salesman_id
+WHERE customer.grade < 300
+ORDER BY customer.customer_id ASC;
+
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/db7193d1-5cb1-4497-b3ef-e37136350d98)
+
 
 **Question 4**
----
--- Paste Question 4 here
+
+![image](https://github.com/user-attachments/assets/bc7aeaff-4797-4fd9-950e-92c565881e5d)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT n.nurse_id, d.department_name
+FROM nurses n
+INNER JOIN departments d ON n.department_id = d.department_id
+WHERE n.first_name = 'David' AND n.last_name = 'Moore';
+
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/73c4543d-3ed2-4357-a680-c50a0c01e106)
+
 
 **Question 5**
----
--- Paste Question 5 here
+
+![image](https://github.com/user-attachments/assets/399370f2-da21-4ccd-88a7-d29440f250e7)
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT o.ord_no, o.ord_date, o.purch_amt, c.cust_name AS "Customer Name", c.grade, s.name AS Salesman, s.commission
+FROM orders o
+INNER JOIN customer c ON o.customer_id = c.customer_id
+INNER JOIN salesman s ON o.salesman_id = s.salesman_id;
+
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/813b7379-22be-40bb-a77a-26ec1678c4a9)
 
 **Question 6**
----
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/c5637ee4-4765-450f-8247-0b35554122c3)
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT c.*
+FROM customer c
+LEFT JOIN orders o ON c.customer_id = o.customer_id
+WHERE o.ord_date > '2012-08-17';
+
+
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/856f5c91-11c8-437a-8fce-11329f18fddb)
 
 **Question 7**
----
--- Paste Question 7 here
+
+![image](https://github.com/user-attachments/assets/0b0a7167-405b-427a-a00c-f846bc2c917d)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT c.cust_name, s.name
+FROM customer c
+LEFT JOIN salesman s ON c.salesman_id = s.salesman_id
+WHERE c.city = s.city;
+
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/539af6f5-b2e4-4aba-a160-6007819eb7b1)
+
 
 **Question 8**
----
--- Paste Question 8 here
+
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT c.cust_name AS "Customer Name", 
+       c.city AS "city", 
+       s.name AS "Salesman", 
+       s.commission AS "commission"
+FROM customer c
+JOIN salesman s ON c.salesman_id = s.salesman_id;
+
 ```
 
 **Output:**
 
-![Output8](output.png)
+
 
 **Question 9**
 ---
 -- Paste Question 9 here
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT n.*
+FROM nurses n
+INNER JOIN departments d ON n.department_id = d.department_id
+WHERE d.department_name = 'Pediatrics';
+
 ```
 
 **Output:**
@@ -165,7 +225,12 @@ ON table1.column = table2.column;
 -- Paste Question 10 here
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT c.cust_name as "Customer Name", c.city AS city, s.name AS Salesman, s.city AS city, s.commission
+FROM customer c
+INNER JOIN salesman s ON c.salesman_id = s.salesman_id
+WHERE c.city != s.city
+AND s.commission > 0.12;
+
 ```
 
 **Output:**
