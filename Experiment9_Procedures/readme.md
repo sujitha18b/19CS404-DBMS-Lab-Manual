@@ -59,7 +59,9 @@ Key Differences:
 - Inside the procedure, compute the square of the input number.
 - Use `DBMS_OUTPUT.PUT_LINE` to display the result.
 - Call the procedure with a number as input.
+
 PROGRAM:
+
 ```
 SET SERVEROUTPUT ON;
 
@@ -92,7 +94,9 @@ Square of 6 is 36
 - Use a loop to calculate the factorial.
 - Return the result using the `RETURN` statement.
 - Call the function using a `SELECT` statement or in an anonymous block.
+
 PROGRAM:
+
 ```
 SET SERVEROUTPUT ON;
 
@@ -128,6 +132,7 @@ Factorial of 5 is 120
 - Accept an input parameter.
 - Use the `MOD` function to check if the number is divisible by 2.
 - Display whether it is Even or Odd using `DBMS_OUTPUT.PUT_LINE`.
+
 PROGRAM:
 ```
 SET SERVEROUTPUT ON;
@@ -163,6 +168,7 @@ END;
 - Use a loop to reverse the digits of the number.
 - Return the reversed number.
 - Call the function and display the output.
+
 PROGRAM:
 ```
 SET SERVEROUTPUT ON;
@@ -201,6 +207,7 @@ Reversed number of 1234 is 4321
 - Accept an input number.
 - Use a loop from 1 to 10 to multiply the input number.
 - Display the multiplication results using `DBMS_OUTPUT.PUT_LINE`.
+
 PROGRAM:
 
 ```
