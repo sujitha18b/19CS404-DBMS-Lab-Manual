@@ -189,6 +189,7 @@ WHERE c.city = s.city;
 
 **Question 8**
 
+![image](https://github.com/user-attachments/assets/7063cee3-c0ff-4fed-8de0-d196ab26a531)
 
 ```sql
 SELECT c.cust_name AS "Customer Name", 
@@ -202,10 +203,12 @@ JOIN salesman s ON c.salesman_id = s.salesman_id;
 
 **Output:**
 
+![image](https://github.com/user-attachments/assets/024b3879-ffd4-4e75-867e-831d6789847d)
 
 
 **Question 9**
 
+![image](https://github.com/user-attachments/assets/a3ba2935-7c46-47f3-bd5c-0297af981d93)
 
 ```sql
 SELECT n.*
@@ -217,11 +220,11 @@ WHERE d.department_name = 'Pediatrics';
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/018c4461-21f8-472d-be5f-383f541e193a)
 
 **Question 10**
----
--- Paste Question 10 here
+
+![image](https://github.com/user-attachments/assets/34445497-8542-4932-a36d-5dcd3045937b)
 
 ```sql
 SELECT c.cust_name as "Customer Name", c.city AS city, s.name AS Salesman, s.city AS city, s.commission
@@ -234,7 +237,8 @@ AND s.commission > 0.12;
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/7ba6cd35-bfe7-4cc6-a255-7484c2c4d366)
+
 
 
 ## RESULT
